@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .courses-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .courses-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .courses-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .course-filters {
+            padding: 2rem 0;
+            background: #f8fafc;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #64748b;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #4f46e5;
+        }
+        
+        .course-card {
+            margin-bottom: 2rem;
+        }
+        
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .course-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stars {
+            color: #fbbf24;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-features li {
+            padding: 0.25rem 0;
+            color: #64748b;
+        }
+        
+        .course-features li i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>SkillBridge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="courses-hero">
+        <div class="container">
+            <h1>Explore Our Courses</h1>
+            <p>Discover a wide range of courses designed to enhance your skills and boost your career prospects in today's competitive job market.</p>
+        </div>
+    </section>
+
+    <!-- Course Filters -->
+    <section class="course-filters">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search courses...">
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Courses</button>
+                <button class="filter-btn" data-filter="web-development">Web Development</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses">
+        <div class="container">
+            <div class="courses-grid">
+                <!-- Web Development Courses -->
+                <div class="course-card" data-category="web-development">
+                    <div class="course-image">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Full Stack Web Development</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>John Smith</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (2,341 reviews)</span>
+                        </div>
+                        <p>Master HTML, CSS, JavaScript, React, Node.js, and database management to become a complete web developer.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> 50+ hands-on projects</li>
+                            <li><i class="fas fa-check"></i> Industry mentorship</li>
+                            <li><i class="fas fa-check"></i> Job placement assistance</li>
+                            <li><i class="fas fa-check"></i> Lifetime access</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="course-price">$499</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('Full Stack Web Development')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="web-development">
+                    <div class="course-image">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>React.js Development</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Sarah Johnson</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.7 (1,892 reviews)</span>
+                        </div>
+                        <p>Build modern, interactive web applications using React.js, Redux, and modern JavaScript.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> 30+ React projects</li>
+                            <li><i class="fas fa-check"></i> Redux & Context API</li>
+                            <li><i class="fas fa-check"></i> Testing with Jest</li>
+                            <li><i class="fas fa-check"></i> Deployment strategies</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 8 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="course-price">$399</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('React.js Development')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Data Science Courses -->
+                <div class="course-card" data-category="data-science">
+                    <div class="course-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Data Science & Analytics</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Dr. Michael Chen</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (3,156 reviews)</span>
+                        </div>
+                        <p>Learn Python, machine learning, statistics, and data visualization to become a data scientist.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Python & R programming</li>
+                            <li><i class="fas fa-check"></i> Machine learning algorithms</li>
+                            <li><i class="fas fa-check"></i> Real-world datasets</li>
+                            <li><i class="fas fa-check"></i> Portfolio projects</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 16 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="course-price">$699</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('Data Science & Analytics')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="data-science">
+                    <div class="course-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Machine Learning & AI</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Dr. Lisa Wang</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (2,847 reviews)</span>
+                        </div>
+                        <p>Deep dive into machine learning algorithms, neural networks, and artificial intelligence.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> TensorFlow & PyTorch</li>
+                            <li><i class="fas fa-check"></i> Deep learning</li>
+                            <li><i class="fas fa-check"></i> Computer vision</li>
+                            <li><i class="fas fa-check"></i> NLP projects</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 20 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Advanced</span>
+                        </div>
+                        <div class="course-price">$899</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('Machine Learning & AI')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Design Courses -->
+                <div class="course-card" data-category="design">
+                    <div class="course-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>UI/UX Design Mastery</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Emma Rodriguez</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.6 (1,543 reviews)</span>
+                        </div>
+                        <p>Create stunning user interfaces and exceptional user experiences with industry-standard tools.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Figma & Adobe XD</li>
+                            <li><i class="fas fa-check"></i> User research methods</li>
+                            <li><i class="fas fa-check"></i> Prototyping & testing</li>
+                            <li><i class="fas fa-check"></i> Design systems</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 10 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="course-price">$399</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('UI/UX Design Mastery')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Marketing Courses -->
+                <div class="course-card" data-category="marketing">
+                    <div class="course-image">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Digital Marketing Complete</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Mark Thompson</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.7 (2,234 reviews)</span>
+                        </div>
+                        <p>Master SEO, social media marketing, PPC, content marketing, and analytics.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Google Analytics certified</li>
+                            <li><i class="fas fa-check"></i> Facebook Ads mastery</li>
+                            <li><i class="fas fa-check"></i> Content strategy</li>
+                            <li><i class="fas fa-check"></i> Email marketing</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Beginner</span>
+                        </div>
+                        <div class="course-price">$449</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('Digital Marketing Complete')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Business Courses -->
+                <div class="course-card" data-category="business">
+                    <div class="course-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Project Management Professional</h3>
+                        <div class="course-instructor">
+                            <i class="fas fa-user"></i>
+                            <span>Robert Davis</span>
+                        </div>
+                        <div class="course-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (1,876 reviews)</span>
+                        </div>
+                        <p>Learn project management methodologies, Agile, Scrum, and prepare for PMP certification.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> PMP exam preparation</li>
+                            <li><i class="fas fa-check"></i> Agile & Scrum mastery</li>
+                            <li><i class="fas fa-check"></i> Risk management</li>
+                            <li><i class="fas fa-check"></i> Project tools training</li>
+                        </ul>
+                        <div class="course-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 14 weeks</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                        <div class="course-price">$599</div>
+                        <button class="btn btn-primary" onclick="enrollInCourse('Project Management Professional')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>SkillBridge</span>
+                    </div>
+                    <p>Empowering careers through skill development and employment opportunities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
